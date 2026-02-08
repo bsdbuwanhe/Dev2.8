@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人主页</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'jazz-dark': '#1a1a1a',
+                        'jazz-gold': '#d4af37',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* 少量自定义 CSS 用于处理特殊效果 */
+        body {
+            background-color: #0f0f0f;
+            color: #f3f3f3;
+        }
+        .glass-nav {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-jazz-gold selection:text-black">
+
+    <nav class="glass-nav fixed w-full z-50 top-0 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-serif font-bold text-jazz-gold tracking-wider">MyProfile</div>
+            <div class="hidden md:flex space-x-8 text-sm tracking-widest uppercase text-gray-400">
+                <a href="#home" class="hover:text-white transition-colors">Home</a>
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-20 bg-[url('https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=2664&auto=format&fit=crop')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] to-transparent"></div>
+
+        <div class="relative z-10 text-center px-6">
+            <p class="text-jazz-gold tracking-[0.2em] text-sm uppercase mb-4 animate-fade-in-up">Welcome to my world</p>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
+                Code & <span class="italic text-gray-400">Cadence</span>
+            </h1>
+            <p class="text-gray-400 max-w-lg mx-auto mb-10 font-light text-lg">
+                探索计算机科学的逻辑与爵士乐的自由。这里是我的数字花园。
+            </p>
+            <a href="#about" class="inline-block border border-jazz-gold text-jazz-gold px-8 py-3 hover:bg-jazz-gold hover:text-black transition-all duration-300 uppercase text-xs tracking-widest">
+                了解更多
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 bg-[#0f0f0f]">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-serif mb-12 relative inline-block">
+                关于我
+                <span class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-1 bg-jazz-gold"></span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 text-left items-center">
+                <div class="space-y-6 text-gray-300 leading-relaxed">
+                    <p>我是一名来自苏州的开发者，目前在香港求学。我不满足于冰冷的代码，更迷恋黑白键上的即兴表达。</p>
+                    <p>在这里，你可以看到我的技术项目，也能听到我的爵士练习录音。我相信技术与艺术终将在某处汇合。</p>
+                </div>
+                <div class="h-64 bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700">
+                    <span class="text-gray-500">（此处放你的照片或 Playing Piano 的图片）</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 示例：简单的滚动监听，让导航栏在滚动时变化
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.add('py-4');
+                nav.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>
