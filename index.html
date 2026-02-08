@@ -3,106 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人主页</title>
+    <title>JAZZ</title>
+    
+    <link rel="stylesheet" href="style.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Lato', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
                     colors: {
-                        'jazz-dark': '#1a1a1a',
-                        'jazz-gold': '#d4af37',
+                        'jazz-paper': '#FDFBF7', 
+                        'jazz-orange': '#FF5F00',
                     }
                 }
             }
         }
     </script>
-    
-    <style>
-        /* 少量自定义 CSS 用于处理特殊效果 */
-        body {
-            background-color: #0f0f0f;
-            color: #f3f3f3;
-        }
-        .glass-nav {
-            background: rgba(26, 26, 26, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-    </style>
 </head>
-<body class="font-sans antialiased selection:bg-jazz-gold selection:text-black">
 
-    <nav class="glass-nav fixed w-full z-50 top-0 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-serif font-bold text-jazz-gold tracking-wider">MyProfile</div>
-            <div class="hidden md:flex space-x-8 text-sm tracking-widest uppercase text-gray-400">
-                <a href="#home" class="hover:text-white transition-colors">Home</a>
-                <a href="#about" class="hover:text-white transition-colors">About</a>
-                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
-            </div>
-        </div>
-    </nav>
+<body class="bg-jazz-paper text-black min-h-screen selection:bg-black selection:text-jazz-paper">
 
-    <section id="home" class="h-screen flex items-center justify-center relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full opacity-20 bg-[url('https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=2664&auto=format&fit=crop')] bg-cover bg-center"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] to-transparent"></div>
-
-        <div class="relative z-10 text-center px-6">
-            <p class="text-jazz-gold tracking-[0.2em] text-sm uppercase mb-4 animate-fade-in-up">Welcome to my world</p>
-            <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
-                Code & <span class="italic text-gray-400">Cadence</span>
-            </h1>
-            <p class="text-gray-400 max-w-lg mx-auto mb-10 font-light text-lg">
-                探索计算机科学的逻辑与爵士乐的自由。这里是我的数字花园。
-            </p>
-            <a href="#about" class="inline-block border border-jazz-gold text-jazz-gold px-8 py-3 hover:bg-jazz-gold hover:text-black transition-all duration-300 uppercase text-xs tracking-widest">
-                了解更多
+    <header class="absolute w-full top-0 z-50"></header>
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 py-8 flex justify-between items-center">
+            
+            <a href="#" class="text-3xl md:text-4xl font-black tracking-tighter uppercase leading-none hover:opacity-70 transition-opacity">
+                JAZZ<span class="text-xs align-top ml-1">®</span>
             </a>
-        </div>
-    </section>
 
-    <section id="about" class="py-24 px-6 bg-[#0f0f0f]">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-serif mb-12 relative inline-block">
-                关于我
-                <span class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-1 bg-jazz-gold"></span>
-            </h2>
-            <div class="grid md:grid-cols-2 gap-12 text-left items-center">
-                <div class="space-y-6 text-gray-300 leading-relaxed">
-                    <p>我是一名来自苏州的开发者，目前在香港求学。我不满足于冰冷的代码，更迷恋黑白键上的即兴表达。</p>
-                    <p>在这里，你可以看到我的技术项目，也能听到我的爵士练习录音。我相信技术与艺术终将在某处汇合。</p>
-                </div>
-                <div class="h-64 bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700">
-                    <span class="text-gray-500">（此处放你的照片或 Playing Piano 的图片）</span>
+            <nav class="hidden md:flex items-center space-x-8 lg:space-x-12">
+                
+               
+                <a href="#artists" class="nav-item">Artists</a>
+                <a href="#releases" class="nav-item">Releases</a>
+                <a href="#playlists" class="nav-item">Playlists</a>
+                <a href="#events" class="nav-item">Events</a>
+                <a href="#store" class="nav-item">Store</a>
+                
+                <button class="ml-4 hover:opacity-60 transition-opacity">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+            </nav>
+
+            <button class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="w-full">
+    
+        <section class="relative w-full h-[85vh] overflow-x-auto flex snap-x snap-mandatory no-scrollbar">
+            
+            <div class="min-w-full h-full snap-center relative">
+                <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=2664&auto=format&fit=crop" 
+                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-out" 
+                     alt="Jazz Piano">
+                <div class="absolute bottom-12 left-6 md:left-12 text-white mix-blend-difference">
+                    <h2 class="font-serif text-6xl md:text-8xl italic tracking-tighter">Improvisation</h2>
+                    <p class="font-sans text-sm tracking-[0.3em] uppercase mt-2">The art of the moment</p>
                 </div>
             </div>
+    
+            <div class="min-w-full h-full snap-center relative">
+                <img src="https://images.unsplash.com/photo-1506462945848-ac8ea6f6ad2d?q=80&w=2670&auto=format&fit=crop" 
+                     class="w-full h-full object-cover" 
+                     alt="City Night">
+                 <div class="absolute bottom-12 left-6 md:left-12 text-white">
+                    <h2 class="font-serif text-6xl md:text-8xl italic tracking-tighter">Nocturne</h2>
+                </div>
+            </div>
+    
+            <div class="min-w-full h-full snap-center relative">
+                <img src="https://images.unsplash.com/photo-1605557626697-2e87166d88f9?q=80&w=2670&auto=format&fit=crop" 
+                     class="w-full h-full object-cover grayscale contrast-125" 
+                     alt="Vinyl">
+                <div class="absolute bottom-12 left-6 md:left-12 text-white mix-blend-difference">
+                    <h2 class="font-serif text-6xl md:text-8xl italic tracking-tighter">Analog Soul</h2>
+                </div>
+            </div>
+    
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 text-xs tracking-widest uppercase animate-bounce">
+                Scroll / Swipe
+            </div>
+        </section>
+    
+    
+        <section class="section-spacing-top layout-container font-sans">
+    
+    <div class="section-header-row">
+        <h2 class="section-title">Weekly Albums</h2>
+        <a href="https://music.apple.com" target="_blank" class="action-link">
+            Open Music ›
+        </a>
+    </div>
+
+    <div class="am-grid">
+        
+        <a href="https://music.apple.com/cn/song/like-someone-in-love/1445755681" target="_blank" class="am-card group">
+            <div class="am-cover-container">
+                <img src="Albums/Like someone in love.JPG" class="am-cover-img" alt="Like Someone In Love">
+                <div class="am-play-overlay">
+                    <div class="am-play-btn"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+            </div>
+            <div class="am-title">Like Someone In Love</div>
+            <div class="am-artist">Bill Evans</div>
+        </a>
+
+        <a href="https://music.apple.com/us/album/blue-train-remastered-2003/1440494437" target="_blank" class="am-card group">
+            <div class="am-cover-container">
+                <img src="Albums/Blue train.JPG" class="am-cover-img" alt="Blue Train">
+                <div class="am-play-overlay">
+                    <div class="am-play-btn"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+            </div>
+            <div class="am-title">Blue Train</div>
+            <div class="am-artist">John Coltrane</div>
+        </a>
+
+        <a href="#" target="_blank" class="am-card group">
+            <div class="am-cover-container">
+                <img src="Albums/Waltz for Debby.JPG" class="am-cover-img" alt="Waltz for Debby">
+                <div class="am-play-overlay">
+                    <div class="am-play-btn"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+            </div>
+            <div class="am-title">Waltz for Debby</div>
+            <div class="am-artist">Bill Evans Trio</div>
+        </a>
+
+        <a href="#" target="_blank" class="am-card group">
+            <div class="am-cover-container">
+                <img src="Albums/The girl from Ipanema.JPG" class="am-cover-img" alt="The Girl From Ipanema">
+                <div class="am-play-overlay">
+                    <div class="am-play-btn"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+            </div>
+            <div class="am-title">The Girl From Ipanema</div>
+            <div class="am-artist">Stan Getz & João Gilberto</div>
+        </a>
+
+        <a href="#" target="_blank" class="am-card group">
+            <div class="am-cover-container">
+                <img src="Albums/Moain'.JPG" class="am-cover-img" alt="Moanin'">
+                <div class="am-play-overlay">
+                    <div class="am-play-btn"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+            </div>
+            <div class="am-title">Moanin'</div>
+            <div class="am-artist">Art Blakey & The Jazz Messengers</div>
+        </a>
+
+    </div>
+</section>
+
+
+
+<section class="section-spacing-bottom pt-12">
+    <div class="layout-container">
+        <div class="poster-decoration">
+         
+            <h1 id="daily-lyrics" class="lyrics-poster-text animate-reveal">
+                The very thought of you makes my heart sing
+                <span class="lyrics-highlight">like an April breeze.</span>
+            </h1>
+
+            <div id="daily-meta" class="lyrics-meta animate-reveal-meta">
+                <span class="text-black font-bold mr-2">Now Playing:</span> 
+                <span id="daily-song">My One and Only Love</span>
+            </div>
+            
         </div>
-    </section>
+    </div>
+</section>
+
+    </main>
 
     <script>
-        // 示例：简单的滚动监听，让导航栏在滚动时变化
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('py-2');
-                nav.classList.remove('py-4');
-            } else {
-                nav.classList.add('py-4');
-                nav.classList.remove('py-2');
+        // Jazz Standard 歌词库 (你可以按照这个格式无限添加)
+        const jazzLyrics = [
+            {
+                text: "The very thought of you makes my heart sing",
+                highlight: "like an April breeze.",
+                song: "My One and Only Love"
+            },
+            {
+                text: "Fly me to the moon and let me",
+                highlight: "play among the stars.",
+                song: "Fly Me To The Moon"
+            },
+            {
+                text: "Summertime, and the livin' is",
+                highlight: "easy.",
+                song: "Summertime"
+            },
+            {
+                text: "I fall in love too easily,",
+                highlight: "I fall in love too fast.",
+                song: "I Fall In Love Too Easily"
+            },
+            {
+                text: "Blue moon, you saw me standing alone",
+                highlight: "without a dream in my heart.",
+                song: "Blue Moon"
+            },
+            {
+                text: "It's a new dawn, it's a new day,",
+                highlight: "it's a new life for me.",
+                song: "Feeling Good"
+            },
+            {
+                text: "Unforgettable, that's what you are,",
+                highlight: "unforgettable though near or far.",
+                song: "Unforgettable"
+            }
+        ];
+    
+        // 随机选择逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. 随机选一个下标
+            const randomIndex = Math.floor(Math.random() * jazzLyrics.length);
+            const selected = jazzLyrics[randomIndex];
+    
+            // 2. 获取 DOM 元素
+            const lyricsEl = document.getElementById('daily-lyrics');
+            const songEl = document.getElementById('daily-song');
+    
+            // 3. 替换内容 (保留 HTML 结构以应用样式)
+            if (lyricsEl && songEl) {
+                // 注意：这里我们重新构建 innerHTML 以包含 span class
+                lyricsEl.innerHTML = `${selected.text} <span class="lyrics-highlight">${selected.highlight}</span>`;
+                songEl.textContent = selected.song;
             }
         });
     </script>
+
 </body>
+
 </html>
